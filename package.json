@@ -1,0 +1,28 @@
+{
+  "name": "food-tracker",
+  "version": "1.0.0",
+  "main": "src/main.ts",
+  "scripts": {
+    "dev": "node --env-file=.env.local --import=tsx --watch src/main.ts",
+    "build": "tsc",
+    "start": "node --require module-alias/register --env-file=.env.production dist/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.13.1",
+    "module-alias": "^2.2.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.17.1",
+    "google-auth-library": "^9.15.1",
+    "mongoose": "^8.10.0"
+  }
+}
