@@ -1,6 +1,6 @@
 import express from "express";
-import { connect } from "./config/database";
-import routes from "./routes/";
+import { connect } from "@/config/database";
+import routes from "@/routes/";
 const app = express();
 
 app.use("/", routes);
