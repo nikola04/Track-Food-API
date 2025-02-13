@@ -3,7 +3,7 @@ import cron from 'node-cron';
 
 export const config: Config = {
     refresh_token: { expiry: 2592000 /* 30 days */ },
-    access_token: { expiry: 2700 /* 45 minutes */ },
+    access_token: { expiry: 1800 /* 30 minutes */ },
     credentials_limit: 5
 }
 

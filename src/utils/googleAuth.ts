@@ -7,7 +7,19 @@ export enum VerificationError {
   NoPayload = "NO_PAYLOAD",
 }
 
-export const verifyIDToken = async (token: string): Promise<{ userId: string, payload: TokenPayload }> => {
+export const verifyIDToken = async (token: string): Promise<{ userId: string, payload: Partial<TokenPayload> }> => {
+    if (process.env.NODE_ENV === "testing") {
+        if(token != "test.token") throw VerificationError.InvalidToken
+        return ({
+            userId: "1234567890",
+            payload: {
+                email_verified: true,
+                email: "test@gmail.com",
+                name: "Test User",
+            }
+        })
+    }
+
     const ticket = await client.verifyIdToken({
         idToken: token,
         audience: [
